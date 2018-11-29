@@ -14,25 +14,32 @@ function degreeIntoRadians(degree){
     return radian;
 }
 
+function isNum(value){
+    if(!parseInt(value)){
+        alert ("Please, insert numbers!");
+    }
+}
+
 function myfunc() {
 
-    var second = document.getElementById("second").value;
-    var minute = document.getElementById("minute").value;
-    var degree = document.getElementById("degree").value;
+    var second = +document.getElementById("second").value;
+    var minute = +document.getElementById("minute").value;
+    var degree = +document.getElementById("degree").value;
 
-    var result;
+    var result = 0;
 
     if (second != null){
-        result = degreeIntoRadians(minutesIntoDegree(secondsIntoMinutes(second)));
+        result += degreeIntoRadians(minutesIntoDegree(secondsIntoMinutes(second)));
     };
 
     if (minute != null){
-        result = degreeIntoRadians(minutesIntoDegree(minute));
+        result += degreeIntoRadians(minutesIntoDegree(minute));
     };
 
     if (degree != null){
-        result = degreeIntoRadians(degree);
+        result += degreeIntoRadians(degree);
     };
 
     document.getElementById("p1").innerHTML = result;
+
 }
